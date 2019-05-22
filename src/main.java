@@ -52,7 +52,7 @@ public class main {
 				panel1.setBounds(0, 0, res.width, res.height);
 				frame.getContentPane().add(panel1);
 				
-				Font font = new Font("210 라임 Bold",Font.PLAIN,30);
+				Font font = new Font("210 라임 B",Font.PLAIN,30);
 				
 				JButton butstart = new JButton("게임시작");
 				JButton butway = new JButton("게임방법");

@@ -78,9 +78,9 @@ public class hamster_stage1 extends JFrame {
 		JLabel hamster = new JLabel(h);
 		hamster.setBounds(30, res.height-530, 300, 300);
 		
-		ImageIcon hand = resizeImg("img/ham/hand.png",270,205);
+		ImageIcon hand = resizeImg("img/ham/hand.png",450,205);
 		JLabel hand1 = new JLabel(hand);
-		hand1.setBounds(res.width/2-290, res.height/2, 300, 300);
+		hand1.setBounds(res.width/2-450, res.height/2, 450, 300);
 		
 		uncorrect.add(hamster);
 		uncorrect.add(hand1);

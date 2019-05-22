@@ -18,7 +18,7 @@ import javax.swing.JProgressBar;
 public class hamster_stage2 extends JFrame{
    public hamster_stage2() {
 	   	Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
-	    Font titlefont = new Font("나눔고딕", Font.PLAIN, 35);
+	    Font titlefont = new Font("210 라임 B", Font.PLAIN, 35);
 	   	
 	   	JPanel contentPane = new JPanel();
 	   	contentPane.setLayout(null);
@@ -42,6 +42,11 @@ public class hamster_stage2 extends JFrame{
 		JLabel bedding = new JLabel(b);
 		bedding.setBounds(100, 200, res.width- 200, 500);
 		contentPane.add(bedding);
+		
+		ImageIcon h = resizeImg("img/ham/hamster.png", 340, 265);
+		JLabel hamster = new JLabel(h);
+		hamster.setBounds(200, 330, 340, 300);
+		contentPane.add(hamster);
 		
 	   	setVisible(true);
 	   	setExtendedState(JFrame.MAXIMIZED_BOTH);

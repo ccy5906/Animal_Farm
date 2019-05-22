@@ -26,15 +26,15 @@ public class stage1_correct extends JFrame {
 		contentPane.setBackground(new Color(252, 221, 98));
 		getContentPane().add(contentPane);
 
-		ImageIcon ho = resizeImg("img/ham/house.png", 350, 350);
+		ImageIcon ho = resizeImg("img/ham/house.png", 400, 400);
 		JLabel house = new JLabel(ho);
-		house.setBounds(50, res.height / 2 - 80, 350, 350);
+		house.setBounds(50, res.height / 2 - 80, 400, 400);
 
 		ImageIcon b = resizeImg("img/ham/bedding.png", res.width, 500);
 		JLabel bedding = new JLabel(b);
 		bedding.setBounds(0, res.height - 400, res.width, 500);
 
-		ImageIcon h = resizeImg("img/ham/correct_hamster.png", 320, 265);
+		ImageIcon h = resizeImg("img/ham/correct_hamster.png", 300,255);
 		JLabel hamster = new JLabel(h);
 		hamster.setBounds(res.width / 4, res.height / 2 + 150, 300, 300);
 
