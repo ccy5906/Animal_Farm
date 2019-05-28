@@ -14,12 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import project.Dog.src.InfoDialog;
-import project.Dog.src.stage_2;
+import project.Hamster.src.InfoDialog;
 
 public class stage1_correct extends JFrame {
 
 	public stage1_correct() {
+		setTitle("동물농장");
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(null);
@@ -30,9 +30,9 @@ public class stage1_correct extends JFrame {
 		JLabel house = new JLabel(ho);
 		house.setBounds(50, res.height / 2 - 80, 400, 400);
 
-		ImageIcon b = resizeImg("img/ham/bedding.png", res.width, 500);
+		ImageIcon b = resizeImg("img/ham/bedding.png", res.width, 250);
 		JLabel bedding = new JLabel(b);
-		bedding.setBounds(0, res.height - 400, res.width, 500);
+		bedding.setBounds(0, res.height - 300, res.width, 250);
 
 		ImageIcon h = resizeImg("img/ham/correct_hamster.png", 300,255);
 		JLabel hamster = new JLabel(h);
@@ -51,13 +51,6 @@ public class stage1_correct extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-		/*Timer time = new Timer();
-
-		TimerTask task = new InfoDialog("<html>정답!<br>" + "햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br>"
-				+ "적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.<br>" + "햄스터가 배를 보이면서 잔다면 집이 편해졌다는 신호일 가능성이 높다.</html>");
-		 time.schedule(task, 3000); 
-		time.schedule(task, 3000);*/
 		
 		
 		Timer timer = new Timer();

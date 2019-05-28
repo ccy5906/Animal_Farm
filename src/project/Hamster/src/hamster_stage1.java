@@ -21,6 +21,7 @@ import javax.swing.border.MatteBorder;
 public class hamster_stage1 extends JFrame {
 	
 	public hamster_stage1() {
+		setTitle("동물농장");
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(null);
@@ -54,7 +55,7 @@ public class hamster_stage1 extends JFrame {
 		
 		ImageIcon b1 = resizeImg("img/ham/bedding.png", (res.width/2)-12, 400);
 		JLabel bedding1 = new JLabel(b1);
-		bedding1.setBounds(5, res.height-400, res.width/2-12, 400);
+		bedding1.setBounds(5, res.height-310, res.width/2-12, 400);
 		
 		ImageIcon hh = resizeImg("img/ham/house_hamster.png",370,370);
 		JLabel house = new JLabel(hh);
@@ -66,13 +67,13 @@ public class hamster_stage1 extends JFrame {
 		JPanel uncorrect = new JPanel();
 		uncorrect.setLayout(null);
 		uncorrect.setBorder(new MatteBorder(0, 4, 0, 6, Color.BLACK));
-		uncorrect.setBackground(new Color(252, 221, 98));
+		uncorrect.setBackground(new Color(249, 247, 162));
 		uncorrect.addMouseListener(new stage1mouse(1));
 		content.add(uncorrect);
 
 		ImageIcon b2 = resizeImg("img/ham/bedding.png", res.width/2-12, 400);
 		JLabel bedding2 = new JLabel(b2);
-		bedding2.setBounds(5, res.height-400, res.width/2-12, 400);
+		bedding2.setBounds(5, res.height-310, res.width/2-12, 400);
 		
 		ImageIcon h = resizeImg("img/ham/hamster.png",250,205);
 		JLabel hamster = new JLabel(h);
@@ -80,7 +81,7 @@ public class hamster_stage1 extends JFrame {
 		
 		ImageIcon hand = resizeImg("img/ham/hand.png",450,205);
 		JLabel hand1 = new JLabel(hand);
-		hand1.setBounds(res.width/2-450, res.height/2, 450, 300);
+		hand1.setBounds(res.width/2-453, res.height/2+50, 450, 300);
 		
 		uncorrect.add(hamster);
 		uncorrect.add(hand1);

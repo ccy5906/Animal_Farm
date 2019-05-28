@@ -39,11 +39,11 @@ public class ShowInfo extends JFrame {
 
 		// 동물 선택
 		JPanel up = new JPanel();
-		up.setBounds(0, 0, res.width - 400, res.height / 8);
+		up.setBounds(0, 0, res.width - 415, res.height / 8);
 		up.setLayout(new GridLayout(1, 3));
 		contentPane.add(up);
 
-		ImageIcon d = resizeImg("img/dog_basic.png", 100, 100);
+		ImageIcon d = resizeImg("img/dog/dog_select.png", 100, 100);
 		ImageIcon ca = resizeImg("img/cat.png", 100, 100);
 		ImageIcon ham = resizeImg("img/ham/hamster.png", 110, 100);
 
