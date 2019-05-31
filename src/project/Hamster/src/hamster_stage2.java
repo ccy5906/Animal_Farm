@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Label;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,6 +18,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,21 +26,19 @@ import javax.swing.JProgressBar;
 
 import project.Dog.src.InfoDialog;
 
-public class hamster_stage2 extends JFrame{
-	int holdcount=-200;
-	ImageIcon hand1_mouse =  resizeImg("img/ham/hand1_mouse.png", 200,150);
-	ImageIcon hand2_mouse =  resizeImg("img/ham/hand2_mouse.png", 200,150);
-	ImageIcon feed1_mouse =  resizeImg("img/ham/feed1_mouse.png", 200,150);
-	ImageIcon feed2_mouse =  resizeImg("img/ham/feed2_mouse.png", 200,150);
-	ImageIcon h1, h2, f1, f2;
-	JLabel hand1, hand2 ,feed1, feed2;
+public class hamster_stage2 extends JFrame {
+	Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
+	JPanel contentPane;
 	static JLabel hold;
+	int holdcount=-200;
+	ImageIcon h1, h2, f1, f2;
+	JLabel hand1, hand2 ,feed1, feed2,checkpan;
 
    public hamster_stage2() {
-	   	Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
+	   
 	    Font titlefont = new Font("210 라임 B", Font.PLAIN, 35);
 	   	
-	   	JPanel contentPane = new JPanel();
+	   	contentPane = new JPanel();
 	   	contentPane.setLayout(null);
 	   	contentPane.setBackground(Color.WHITE);
 	   	add(contentPane);
@@ -79,6 +81,9 @@ public class hamster_stage2 extends JFrame{
 		ramdom.setBounds(res.width-700, 240, 400, 365);
 		contentPane.add(ramdom);
 		
+		
+	
+		
 		h1 = resizeImg("img/ham/hand1.png", 200,150);
 		hand1 = new JLabel(h1);
 		hand1.setBounds(400, res.height- 460, 200, 200);
@@ -117,7 +122,8 @@ public class hamster_stage2 extends JFrame{
 		JLabel pan = new JLabel(p);
 		pan.setBounds(0, res.height- 280, res.width, 180);
 		contentPane.add(pan);
-
+		
+	
 	   	setVisible(true);
 	   	setExtendedState(JFrame.MAXIMIZED_BOTH);
 	   	
@@ -131,15 +137,21 @@ public class hamster_stage2 extends JFrame{
 		TimerTask task = new TimerTask() {			
 			@Override
 			public void run() {			
-				    for(int i = 0 ; i < res.width ; i++){ holdcount+=i;
+				    for(int i = 0 ; i < res.width ; i++){ 
+				    	holdcount+=i;
+				    	System.out.println(holdcount);
+				    if(holdcount <= res.width && holdcount >= 1700) {
+				    		new Stage2_Check();
+				    		System.out.println("yes~~~");
+				    	}
+				    
 					if(holdcount >= res.width+200) { 
-						try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					} holdcount=-200; i = 0; hold.setIcon(hol);}	
+						try {Thread.sleep(2000);
+						} catch (InterruptedException e) {e.printStackTrace();}	
+					holdcount=-200; i = 0; hold.setIcon(hol);
+					}	
 					hold.setBounds(holdcount, res.height-280, 200, 180);
-					try {Thread.sleep(80);} 
+					try {Thread.sleep(10);} 
 					catch (InterruptedException e) {e.printStackTrace();}
 	            }//for
 			}//run
@@ -161,10 +173,12 @@ public class hamster_stage2 extends JFrame{
 		return image;
 	}
 	
-	
 	class mouse extends MouseAdapter{
 		int num = 0;
-	
+		ImageIcon hand1_mouse =  resizeImg("img/ham/hand1_mouse.png", 200,150);
+		ImageIcon hand2_mouse =  resizeImg("img/ham/hand2_mouse.png", 200,150);
+		ImageIcon feed1_mouse =  resizeImg("img/ham/feed1_mouse.png", 200,150);
+		ImageIcon feed2_mouse =  resizeImg("img/ham/feed2_mouse.png", 200,150);
 		public mouse(int num) { this.num = num;}
 
 		@Override
@@ -188,5 +202,38 @@ public class hamster_stage2 extends JFrame{
 	        else if(num == 4) feed2.setIcon(f2);	
 		}	
 	}
+	
+	class Stage2_Check{
+		ImageIcon yes = resizeImg("img/ham/stage2_yes.png", 400, 100);
+		ImageIcon no = resizeImg("img/ham/stage2_no.png", 400, 100);
+		public Stage2_Check() {
+			Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
+			Font font = new Font("210 라임 Bold",Font.PLAIN,25);
+			JFrame frame = new JFrame();
+			JPanel panel = new JPanel();
+			panel.setLayout(null);
+			
+			checkpan = new JLabel(yes);
+			checkpan.setBounds(res.width/3, res.height/2, 400, 100);
+			panel.add(checkpan);
+		
+		    
+			frame.setPreferredSize(new Dimension(1145, 840));
+			frame.setLocation(300, 100);	
+			frame.add(panel);
+			frame.pack();
+			frame.setVisible(true);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
+		    System.out.println("yse!~~");
+		   try {
+			Thread.sleep(90);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		   contentPane.remove(checkpan);
+		}
+	}
+
 
 }

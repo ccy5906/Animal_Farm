@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 
 public class Stage2_Mouse extends MouseAdapter {
+	static int check_hand = 0;
 	int num = 0, holdcount = 0;
 	ImageIcon change_hand1 = resizeImg("img/ham/change_hand1.png", 180, 100);
 	ImageIcon change_hand1_feed1 = resizeImg("img/ham/change_hand1_feed1.png", 180, 120);
@@ -26,48 +27,34 @@ public class Stage2_Mouse extends MouseAdapter {
 		case 1:
 			if (holdcount > 400 && holdcount < 600) {
 				hamster_stage2.hold.setIcon(change_hand1);
-				System.out.println(holdcount);
-				System.out.println(hamster_stage2.hold.getIcon());
-				System.out.println(change_hand1);
+				check_hand = 0;
 			}
 			break;
 		case 2:
 			if (holdcount > 650 && holdcount < 850) {
 				hamster_stage2.hold.setIcon(change_hand2);
-				System.out.println(holdcount);
-				System.out.println(hamster_stage2.hold.getIcon());
-				System.out.println(change_hand2);
+				check_hand = 1;
 			}
 			break;
 		case 3:
-			if (hamster_stage2.hold.getIcon().equals(change_hand1)) {
+			if (check_hand == 0) {
 				if (holdcount > 1050 && holdcount < 1250) {
 					hamster_stage2.hold.setIcon(change_hand1_feed1);
-					System.out.println(holdcount);
-					System.out.println(hamster_stage2.hold.getIcon());
-					System.out.println(change_hand1);
-					System.out.println(change_hand2);
 				}
 			} else {
 				if (holdcount > 1050 && holdcount < 1250) {
 					hamster_stage2.hold.setIcon(change_hand2_feed1);
-					System.out.println(holdcount);
-					System.out.println(hamster_stage2.hold.getIcon());
-					System.out.println(change_hand1);
-					System.out.println(change_hand2);
 				}
 			}
 			break;
 		case 4:
-			if (hamster_stage2.hold.getIcon().equals(change_hand1)) {
+			if (check_hand == 0) {
 				if (holdcount > 1300 && holdcount < 1500) {
 					hamster_stage2.hold.setIcon(change_hand1_feed2);
-					System.out.println(holdcount);
 				}
 			} else {
 				if (holdcount > 1300 && holdcount < 1500) {
 					hamster_stage2.hold.setIcon(change_hand2_feed2);
-					System.out.println(holdcount);
 				}
 			}
 			break;
