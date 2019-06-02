@@ -23,7 +23,7 @@ public class stage1_correct extends JFrame {
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(null);
-		contentPane.setBackground(new Color(252, 221, 98));
+		contentPane.setBackground(new Color(252, 244, 153));
 		getContentPane().add(contentPane);
 
 		ImageIcon ho = resizeImg("img/ham/house.png", 400, 400);
@@ -57,7 +57,7 @@ public class stage1_correct extends JFrame {
 		TimerTask task = new TimerTask() {			
 			@Override
 			public void run() {
-				InfoDialog info = new InfoDialog("<html>정답!<br><br>" + "햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>"
+				InfoDialog info = new InfoDialog(1,"<html>정답!<br><br>" + "햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>"
 						+ "적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.<br><br>" + "햄스터가 배를 보이면서 잔다면 집이 편해졌다는 신호일 가능성이 높다.</html>");
 			}
 		};

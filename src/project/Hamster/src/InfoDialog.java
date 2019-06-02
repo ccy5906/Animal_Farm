@@ -20,10 +20,13 @@ public class InfoDialog extends TimerTask{
 	JPanel panel;
 	JLabel text;
 	int status=0; //1이면 버튼 클릭함
-	
+	String content = "<html>Stage2, 핸들링 게임 방법<br><br>"
+	+ "첫날 햄스터에게 강제로 핸들링을 시도하는 경우<br> <br>햄스터가 핸들링에 대해 트라우마가 생길 수 있다.<br><br>"+
+	"햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>"+
+	"적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.</html>";
 	public InfoDialog() {}
 	
-	public InfoDialog(String con) {
+	public InfoDialog(int count, String con) {
 		
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		Font font = new Font("210 라임 Bold",Font.PLAIN,25);
@@ -54,8 +57,25 @@ public class InfoDialog extends TimerTask{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == close) {
+					switch (count) {
+					case 1:
+						InfoDialog info = new InfoDialog(2, content);
+						break;
+					case 2:
+						new hamster_stage2();
+						break;	
+					case 3:
+						new hamster_stage3();
+						break;	
+					case 4:
+						new ShowInfo();
+						break;		
+
+					default:
+						break;
+					}
 					frame.dispose();
-					new hamster_stage2();
+					
 				}
 			}
 		};

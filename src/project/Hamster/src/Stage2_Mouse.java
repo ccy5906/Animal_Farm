@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 
 public class Stage2_Mouse extends MouseAdapter {
-	static int check_hand = 0;
+	static int check_hand = 2;
 	int num = 0, holdcount = 0;
 	ImageIcon change_hand1 = resizeImg("img/ham/change_hand1.png", 180, 100);
 	ImageIcon change_hand1_feed1 = resizeImg("img/ham/change_hand1_feed1.png", 180, 120);
@@ -17,6 +17,8 @@ public class Stage2_Mouse extends MouseAdapter {
 	ImageIcon change_hand2 = resizeImg("img/ham/change_hand2.png", 180, 100);
 	ImageIcon change_hand2_feed1 = resizeImg("img/ham/change_hand2_feed1.png", 180, 120);
 	ImageIcon change_hand2_feed2 = resizeImg("img/ham/change_hand2_feed2.png", 180, 120);
+	ImageIcon change_hand3_feed1 = resizeImg("img/ham/change_hand3_feed1.png", 180, 120);
+	ImageIcon change_hand3_feed2 = resizeImg("img/ham/change_hand3_feed2.png", 180, 120);
 
 	public Stage2_Mouse(int num, int holdcount) {
 		this.num = num;
@@ -28,39 +30,47 @@ public class Stage2_Mouse extends MouseAdapter {
 			if (holdcount > 400 && holdcount < 600) {
 				hamster_stage2.hold.setIcon(change_hand1);
 				check_hand = 0;
+			}else {
+				return;
 			}
 			break;
 		case 2:
 			if (holdcount > 650 && holdcount < 850) {
 				hamster_stage2.hold.setIcon(change_hand2);
 				check_hand = 1;
+			}else {
+				return;
 			}
 			break;
 		case 3:
-			if (check_hand == 0) {
-				if (holdcount > 1050 && holdcount < 1250) {
+			if (holdcount > res.width-650 && holdcount < res.width-850) {
+				if (check_hand == 0) {
 					hamster_stage2.hold.setIcon(change_hand1_feed1);
-				}
-			} else {
-				if (holdcount > 1050 && holdcount < 1250) {
+				}else if(check_hand == 1){
 					hamster_stage2.hold.setIcon(change_hand2_feed1);
+				}else {
+					hamster_stage2.hold.setIcon(change_hand3_feed1);
 				}
+			}else {
+				return;
 			}
 			break;
 		case 4:
-			if (check_hand == 0) {
-				if (holdcount > 1300 && holdcount < 1500) {
+			if (holdcount > res.width-400 && holdcount < res.width-600) {
+				if (check_hand == 0) {
 					hamster_stage2.hold.setIcon(change_hand1_feed2);
-				}
-			} else {
-				if (holdcount > 1300 && holdcount < 1500) {
+				} else if (check_hand == 1) {
 					hamster_stage2.hold.setIcon(change_hand2_feed2);
+				}else {
+					hamster_stage2.hold.setIcon(change_hand3_feed2);
 				}
+			}else {
+				return;
 			}
 			break;
 
 		default:
-			break;
+			return;
 		}
 
 	}

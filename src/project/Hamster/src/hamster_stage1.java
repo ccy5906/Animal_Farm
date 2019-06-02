@@ -67,7 +67,7 @@ public class hamster_stage1 extends JFrame {
 		JPanel uncorrect = new JPanel();
 		uncorrect.setLayout(null);
 		uncorrect.setBorder(new MatteBorder(0, 4, 0, 6, Color.BLACK));
-		uncorrect.setBackground(new Color(249, 247, 162));
+		uncorrect.setBackground(new Color(252, 244, 153));
 		uncorrect.addMouseListener(new stage1mouse(1));
 		content.add(uncorrect);
 
@@ -94,7 +94,7 @@ public class hamster_stage1 extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new hamster_stage1();
+		hamster_stage1 hamster1 = new hamster_stage1();
 	}
 
 	public ImageIcon resizeImg(String img, int width, int hight) {

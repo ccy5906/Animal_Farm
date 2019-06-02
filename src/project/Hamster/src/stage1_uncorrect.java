@@ -14,12 +14,16 @@ import javax.swing.JPanel;
 
 
 public class stage1_uncorrect extends JFrame {
+	String stage1content = "<html>오답!<br><br>" + 
+			"첫날 햄스터에게 강제로 핸들링을 시도하는 경우<br> <br>햄스터가 핸들링에 대해 트라우마가 생길 수 있다.<br><br>" + 
+			"햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>" + 
+			"적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.</html>";
 	public stage1_uncorrect() {
 		setTitle("동물농장");
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(null);
-		contentPane.setBackground(new Color(249, 247, 162));
+		contentPane.setBackground(new Color(252, 244, 153));
 		getContentPane().add(contentPane);
 
 		ImageIcon ho = resizeImg("img/ham/house.png",400, 400);
@@ -56,10 +60,7 @@ public class stage1_uncorrect extends JFrame {
 		TimerTask task = new TimerTask() {			
 			@Override
 			public void run() {
-				InfoDialog info =  new InfoDialog("<html>오답!<br><br>"
-						+ "첫날 햄스터에게 강제로 핸들링을 시도하는 경우<br> <br>햄스터가 핸들링에 대해 트라우마가 생길 수 있다.<br><br>"+
-						"햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>"+
-						"적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.</html>");
+				InfoDialog info =  new InfoDialog(1,stage1content);
 			}
 		};
 			timer.schedule(task, 3000);
