@@ -41,8 +41,10 @@ public class stage1_cat extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == liv_room) {
 					new stage1_cat_result1();
+					dispose();
 				}else if(e.getSource() == veranda) {
 					new stage1_cat_result2();
+					dispose();
 				}
 			}
 		};
@@ -69,9 +71,9 @@ public class stage1_cat extends JFrame{
 		
 	}
 	
-	public static void main(String args[]) {
+/*	public static void main(String args[]) {
 		new stage1_cat();
-	}
+	}*/
 	
 	public ImageIcon rszImg(String img, int width, int hight) {
 		ImageIcon b_ic = new ImageIcon(img);

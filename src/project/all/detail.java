@@ -1,3 +1,4 @@
+package project.all;
 public class detail implements Runnable {
 	int start = gameroom.feelBar.getValue();
 	int change;

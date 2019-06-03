@@ -1,3 +1,4 @@
+package project.all;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -11,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -21,15 +24,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import project.Hamster.src.ShowInfo;
+import project.all.ShowInfo;
 
 public class main {
 	
 
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {				
+	public main() {
+		
 				//게임을 하지 않더라도 정보(텍스트파일)를 얻을 수 있게
 				//팝업창 글씨크기,사이즈 키우기 ->우리껄로 만들기
 				//stage1 먹이양, 속도 등
@@ -89,6 +90,15 @@ public class main {
 					public void actionPerformed(ActionEvent e) {
 						System.out.println("정보전송 버튼 클릭");
 						new ShowInfo();
+						Timer timer1 = new Timer();
+						TimerTask task1 = new TimerTask() {			
+							@Override
+							public void run() {
+								frame.dispose();
+							}
+						};
+						timer1.schedule(task1, 5000);
+						
 					}					
 				});
 				
@@ -101,13 +111,12 @@ public class main {
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				
-				
-			}//run
-				
-		});		
-		
 
-	}//main
+				
+	
+	}
+	
+	
 	public static ImageIcon rszImg(String img, int width, int hight) {
 		ImageIcon b_ic = new ImageIcon(img);
 		Image icc = b_ic.getImage();

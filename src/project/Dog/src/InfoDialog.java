@@ -1,7 +1,6 @@
 package project.Dog.src;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -12,17 +11,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+
+import project.all.SendInfo;
+import project.all.main;
 
 public class InfoDialog extends JFrame{
-	
 	JPanel panel;
 	JLabel text;
+	int stage=0;
 	int status=0; //1이면 버튼 클릭함
 	
 	public InfoDialog() {}
 	
-	public InfoDialog(String con) {
+	public InfoDialog(String con,int stage) {
 		
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		Font font = new Font("210 라임 Bold",Font.PLAIN,25);
@@ -53,9 +54,13 @@ public class InfoDialog extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == close) {
-					/*status = 1;
-					dispose();*/
-					System.exit(0);
+					status = 1;
+					dispose();
+					if(stage == 0) {new stage_1_1();}
+					if(stage == 1) {new stage_2();}
+					else if(stage == 2) {new stage_3();}
+					else if(stage == 3) {new project.all.ShowInfo();}
+					
 				}
 			}
 		};

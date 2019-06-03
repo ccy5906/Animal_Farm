@@ -35,11 +35,11 @@ public class stage_1_1 extends JFrame{
 	public stage_1_1() {
 		super("강아지 Stage 1");
 		
-		try {
+		/*try {
 			Thread.sleep(5000);
 		}catch(InterruptedException e) {
 			e.printStackTrace();
-		}
+		}*/
      	
 		 Dimension res = Toolkit.getDefaultToolkit().getScreenSize();	
 		 ImageIcon back = rszImg("img/dog/dog_back.jpg", res.width, res.height);
@@ -76,7 +76,7 @@ public class stage_1_1 extends JFrame{
 						"순대 간, 계란 노른자, 고구마, 당근과 같은 음식은 먹어도 되지만 <br><br>" + 
 						"포도, 고등어, 초콜릿, 모든 과일씨, 아몬드 등은 먹으면 안 된다. <br><br>" + 
 						"소량이라도 강아지에게는 큰 영향을 끼칠 수 있으니 조심해야 한다.<br><br>"+
-						"10초 후 다음 스테이지로 넘어갑니다.</html>";
+						"</html>";
 				
 				new Thread(new Runnable() {
 					@Override
@@ -88,6 +88,7 @@ public class stage_1_1 extends JFrame{
 								timer.setText("남은 시간 : "+time);
 								if(time <=0) {
 									end=1; 
+									
 									break;
 								}
 							}catch(InterruptedException e) {
@@ -95,8 +96,8 @@ public class stage_1_1 extends JFrame{
 							}
 						}
 						if(end ==1) {
-							InfoDialog info = new InfoDialog(content);
-							Timer timer = new Timer();
+							InfoDialog info = new InfoDialog(content,1);
+						/*	Timer timer = new Timer();
 							TimerTask task = new TimerTask() {			
 								@Override
 								public void run() {
@@ -107,7 +108,7 @@ public class stage_1_1 extends JFrame{
 									dispose();
 								}
 							};
-							timer.schedule(task, 5000);
+							timer.schedule(task, 5000);*/
 							
 						}
 					}

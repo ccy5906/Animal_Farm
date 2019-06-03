@@ -54,7 +54,9 @@ public class stage_2 extends JFrame {
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					new stage_2_1();
+					setVisible(false);
 					dispose();
+					
 				}
 			});
 			

@@ -14,6 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import project.all.ShowInfo;
+
 public class InfoDialog extends JFrame{
 	
 	JPanel panel;
@@ -21,7 +23,7 @@ public class InfoDialog extends JFrame{
 	
 	public InfoDialog() {}
 	
-	public InfoDialog(String con) {
+	public InfoDialog(String con,int stage) {
 		
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		Font font = new Font("210 라임 B", Font.PLAIN, 25);
@@ -52,7 +54,11 @@ public class InfoDialog extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource() == close) {
-					System.exit(0);
+					if(stage == 1) {new stage2_cat_way();}
+					else if(stage == 2) {new stage3_cat();}
+					else if(stage == 3) {new ShowInfo(); } 
+					dispose();
+				
 				}
 			}
 		};

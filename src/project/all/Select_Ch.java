@@ -1,3 +1,4 @@
+package project.all;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -83,14 +84,15 @@ public class Select_Ch extends JFrame {
 							if(e.getSource() == select1) {
 								System.out.println("1 선택");
 								new stage_1();
-								//new stage_2();
-								setVisible(false);
+								dispose();
 							}else if(e.getSource() == select2) {
 								System.out.println("2 선택");
 								new stage1_cat();
+								dispose();
 							}else if(e.getSource() == select3) {
 								System.out.println("3 선택");
 								new hamster_stage1();
+								dispose();
 							}else {
 								System.out.println("다시 선택해주시기 바랍니다.");
 							}

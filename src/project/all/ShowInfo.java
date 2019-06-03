@@ -1,4 +1,4 @@
-package project.Hamster.src;
+package project.all;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -39,11 +41,11 @@ public class ShowInfo extends JFrame {
 
 		// 동물 선택
 		JPanel up = new JPanel();
-		up.setBounds(0, 0, res.width - 400, res.height / 8);
+		up.setBounds(0, 0, res.width - 415, res.height / 8);
 		up.setLayout(new GridLayout(1, 3));
 		contentPane.add(up);
 
-		ImageIcon d = resizeImg("img/dog_basic.png", 100, 100);
+		ImageIcon d = resizeImg("img/dog/dog_select.png", 100, 100);
 		ImageIcon ca = resizeImg("img/cat.png", 100, 100);
 		ImageIcon ham = resizeImg("img/ham/hamster.png", 110, 100);
 
@@ -97,7 +99,7 @@ public class ShowInfo extends JFrame {
 		down.add(right);
 
 		JButton send = new JButton("메일 전송");
-		send.setBounds(down.getWidth()/2-200, res.height - 400, 300, 50);
+		send.setBounds(down.getWidth()/2-450, res.height - 400, 300, 50);
 		send.setFont(font);
 		send.setBackground(Color.WHITE);
 		hamster.setFocusPainted(false);
@@ -109,6 +111,20 @@ public class ShowInfo extends JFrame {
 			}
 		});
 		down.add(send);
+		
+		JButton print = new JButton("프린터 출력");
+		print.setBounds(down.getWidth()/2+200, res.height - 400, 300, 50);
+		print.setFont(font);
+		print.setBackground(Color.WHITE);
+		hamster.setFocusPainted(false);
+		print.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new printInfo();
+			}
+		});
+		down.add(print);
 
 		url = new String("동물정보/슬라이드" + i + ".jpg");
 		infoimage = resizeImg(url, down.getWidth()/2+300, down.getHeight()/2+100);
@@ -121,6 +137,13 @@ public class ShowInfo extends JFrame {
 		pack();
 		setVisible(true);
 		setLocation((res.width - getWidth()) / 2, (res.height - getHeight()) / 2);
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				new main();
+				dispose();
+			}
+		});
 
 	}
 

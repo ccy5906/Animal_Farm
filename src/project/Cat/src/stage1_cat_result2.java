@@ -41,9 +41,10 @@ public class stage1_cat_result2 extends JFrame {
 			public void run() {
 					try {
 						Thread.sleep(2000);
-						InfoDialog info = new InfoDialog("<html><h1>Stage1-오답!</h1><br>간혹 베란다에는 방범창이 설치되어 있지 않은 곳이 있어서<br> <br>만약 베란다에 설치를 했는데 혹여나 창문이 열려 있으면 탈출의 위험이 있다.</html>");
+						InfoDialog info = new InfoDialog("<html><h1>Stage1</h1><br>간혹 베란다에는 방범창이 설치되어 있지 않은 곳이 있어서<br> <br>만약 베란다에 설치를 했는데 혹여나 창문이 열려 있으면 탈출의 위험이 있다.</html>",1);
 						Thread.sleep(3000);
-						new stage2_cat();
+						new stage2_cat_way();
+						info.dispose();
 						dispose();								
 					}catch(InterruptedException e) {
 						e.printStackTrace();

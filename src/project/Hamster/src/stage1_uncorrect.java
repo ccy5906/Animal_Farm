@@ -14,22 +14,27 @@ import javax.swing.JPanel;
 
 
 public class stage1_uncorrect extends JFrame {
+	String stage1content = "<html>오답!<br><br>" + 
+			"첫날 햄스터에게 강제로 핸들링을 시도하는 경우<br> <br>햄스터가 핸들링에 대해 트라우마가 생길 수 있다.<br><br>" + 
+			"햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>" + 
+			"적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.</html>";
 	public stage1_uncorrect() {
+		setTitle("동물농장");
 		Dimension res = Toolkit.getDefaultToolkit().getScreenSize();
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(null);
-		contentPane.setBackground(new Color(252, 221, 98));
+		contentPane.setBackground(new Color(252, 244, 153));
 		getContentPane().add(contentPane);
 
-		ImageIcon ho = resizeImg("img/ham/house.png", 350, 350);
+		ImageIcon ho = resizeImg("img/ham/house.png",400, 400);
 		JLabel house = new JLabel(ho);
-		house.setBounds(50, res.height / 2 - 80, 350, 350);
+		house.setBounds(50, res.height / 2 - 80, 400, 400);
 
-		ImageIcon b = resizeImg("img/ham/bedding.png", res.width, 500);
+		ImageIcon b = resizeImg("img/ham/bedding.png", res.width, 250);
 		JLabel bedding = new JLabel(b);
-		bedding.setBounds(0, res.height - 400, res.width, 500);
+		bedding.setBounds(0, res.height - 300, res.width, 250);
 
-		ImageIcon h = resizeImg("img/ham/uncorrect_hamster.png", 200, 155);
+		ImageIcon h = resizeImg("img/ham/uncorrect_hamster.png", 300,255);
 		JLabel hamster = new JLabel(h);
 		hamster.setBounds(res.width / 4, res.height - 350, 300, 300);
 
@@ -37,9 +42,9 @@ public class stage1_uncorrect extends JFrame {
 		JLabel talk = new JLabel(t);
 		talk.setBounds(res.width / 2, res.height / 8, 450, 300);
 
-		ImageIcon hand = resizeImg("img/ham/hand.png", 400, 205);
+		ImageIcon hand = resizeImg("img/ham/hand.png", 450,205);
 		JLabel hand1 = new JLabel(hand);
-		hand1.setBounds(res.width - 300, res.height / 6, 400, 300);
+		hand1.setBounds(res.width - 440, res.height/3, 450, 300);
 
 		contentPane.add(hand1);
 		contentPane.add(talk);
@@ -51,28 +56,11 @@ public class stage1_uncorrect extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		/*Timer time = new Timer();
-
-		try {
-	         Thread.sleep(2000);
-	         TimerTask task =  new InfoDialog("<html>오답!<br>"
-						+ "첫날 햄스터에게 강제로 핸들링을 시도하는 경우<br> 햄스터가 핸들링에 대해 트라우마가 생길 수 있다.<br>"+
-						"햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br>"+
-						"적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.</html>");
-			time.schedule(task, 3000);
-		} catch(InterruptedException ex) {
-	         //
-	      }
-		time.cancel();*/
-		
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {			
 			@Override
 			public void run() {
-				InfoDialog info =  new InfoDialog("<html>오답!<br><br>"
-						+ "첫날 햄스터에게 강제로 핸들링을 시도하는 경우<br> <br>햄스터가 핸들링에 대해 트라우마가 생길 수 있다.<br><br>"+
-						"햄스터는 집에 익숙해질 수 있도록 최소 일주일 정도의 적응 기간이 필요하다.<br><br>"+
-						"적응 기간은 햄스터의 집을 어둡게 해주고 혼자 있도록 해준다.</html>");
+				InfoDialog info =  new InfoDialog(1,stage1content);
 			}
 		};
 			timer.schedule(task, 3000);

@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class stage_1{
 	InfoDialog info;
 	public stage_1() {	
-		Timer timer = new Timer();
+		/*Timer timer = new Timer();
 		TimerTask task = new TimerTask() {			
 			@Override
 			public void run() {
@@ -30,15 +30,15 @@ public class stage_1{
 				info.dispose();
 			}
 		};
-		timer.schedule(task, 3000);
+		timer.schedule(task, 3000);*/
 		
 	    String content = "<html>"+
 						"<h1>Stage1 게임 방법</h1><br>"+
 						"키보드 좌우키를 이용하여 음식을 먹으세요!<br><br>"+"강아지가 먹어도 되는 음식과 그렇지 않은 음식을 생각하며 먹어주세요<br><br>"+
-						"제한시간은 1분입니다.<br><br> 5초 후 시작됩니다.<br>"+
+						"제한시간은 1분입니다.<br><br>"+
 						"</html>";
 				
-		info = new InfoDialog(content);
+		info = new InfoDialog(content,0);
 				
 		
 				
