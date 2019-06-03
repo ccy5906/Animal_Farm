@@ -80,7 +80,7 @@ public class hamster_stage3 extends JFrame {
 		String s_txt = "<html><center>스트레스를 <br>" + "주지 않는다.</center><html>";
 		JButton smile = new JButton(s_txt, s);
 		smile.setFont(smallfont);
-		smile.setBounds(res.width / 2 - 150, 120, 300, 200);
+		smile.setBounds(res.width / 2 - 150, 200, 300, 200);
 		smile.setBorder(new MatteBorder(2, 2, 2, 2, Color.BLACK));
 		smile.setOpaque(false);
 		smile.setFocusPainted(false);
@@ -99,7 +99,7 @@ public class hamster_stage3 extends JFrame {
 		String fr_txt = "<html><center>청결한<br>" + "환경을 만든다.</center><html>";
 		JButton fresh = new JButton(fr_txt, fr);
 		fresh.setFont(smallfont);
-		fresh.setBounds(smile.getX() - 500, 120, 300, 200);
+		fresh.setBounds(smile.getX() - 500, 200, 300, 200);
 		fresh.setBorder(new MatteBorder(2, 2, 2, 2, Color.BLACK));
 		fresh.setOpaque(false);
 		fresh.setContentAreaFilled(false);
@@ -118,7 +118,7 @@ public class hamster_stage3 extends JFrame {
 		String c_txt = "<html><center>케이지를  <br>" + "바꾼다.</center><html>";
 		JButton cage = new JButton(c_txt, c);
 		cage.setFont(smallfont);
-		cage.setBounds(smile.getX() + 500, 120, 300, 200);
+		cage.setBounds(smile.getX() + 500, 200, 300, 200);
 		cage.setBorder(new MatteBorder(2, 2, 2, 2, Color.BLACK));
 		cage.setOpaque(false);
 		cage.setFocusPainted(false);
