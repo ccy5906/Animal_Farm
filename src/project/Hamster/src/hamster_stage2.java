@@ -30,7 +30,11 @@ import javax.swing.event.ChangeListener;
 
 public class hamster_stage2 extends JFrame {
 	static JLabel hold;
+<<<<<<< HEAD
 	int holdcount=-200, chance = 12, x = 0, num, value = 20, end = 0,win = 0, time = 80;
+=======
+	int holdcount=-200, chance = 12, x = 0, num, value = 120, end = 0,win = 0, time = 80;
+>>>>>>> master
 	//holdcount = 이미지의 x좌표, chance = cm값, x = 성공/실패창 한 번만, num = 이미지 변경 변수, value = 시간값, end = 시간타이머, win = 성공횟수
 	ImageIcon h1, h2, f1, f2, r;
 	JLabel hand1, hand2 ,feed1, feed2, title, handling, random;
@@ -101,12 +105,21 @@ public class hamster_stage2 extends JFrame {
 		hand2 = new JLabel(h2);
 		hand2.setBounds(650, res.height- 460, 200, 200);
 		contentPane.add(hand2);
+<<<<<<< HEAD
 		
 		f1 = resizeImg("img/ham/feed1.png", 200,150);
 		feed1 = new JLabel(f1);
 		feed1.setBounds(1050, res.height- 460, 200, 200);
 		contentPane.add(feed1);
 		
+=======
+		
+		f1 = resizeImg("img/ham/feed1.png", 200,150);
+		feed1 = new JLabel(f1);
+		feed1.setBounds(1050, res.height- 460, 200, 200);
+		contentPane.add(feed1);
+		
+>>>>>>> master
 		f2 = resizeImg("img/ham/feed2.png", 200,150);
 		feed2 = new JLabel(f2);
 		feed2.setBounds(1300, res.height- 460, 200, 200);
@@ -148,12 +161,15 @@ public class hamster_stage2 extends JFrame {
 	   								new next();	
 	   								break;
 	   							}
+<<<<<<< HEAD
 	   					    	if(end ==1) {
 	   								timer.cancel();
 	   								t.interrupt();
 	   								new next();
 	   								break;
 	   							}
+=======
+>>>>>>> master
 	   					    	 if(holdcount <= res.width && holdcount >= res.width-200) {
 	   					    		 if(x == 0) {
 	   					    			 new Stage2_Check(random());
@@ -178,6 +194,12 @@ public class hamster_stage2 extends JFrame {
 
 		t = new Thread(new threadnew());
 		t.start(); 
+<<<<<<< HEAD
+=======
+	
+		
+		
+>>>>>>> master
 		
 	  	new Thread(new Runnable() {
 				@Override
@@ -195,6 +217,14 @@ public class hamster_stage2 extends JFrame {
 							e.printStackTrace();
 						}
 					}
+<<<<<<< HEAD
+=======
+					if(end ==1) {
+						timer.cancel();
+						t.interrupt();
+						new next();
+					}
+>>>>>>> master
 				}
 			}).start();  //timer
 	  	
@@ -205,6 +235,7 @@ public class hamster_stage2 extends JFrame {
 			@Override
 			public void windowClosing(WindowEvent e) {System.exit(0);}
 		});//WindowLister    
+<<<<<<< HEAD
    }
    public boolean random() {
      if(hold.getIcon().toString().equals(r.toString())) {
@@ -220,6 +251,23 @@ public class hamster_stage2 extends JFrame {
     	 return false;
      }
    }
+=======
+   }
+   public boolean random() {
+     if(hold.getIcon().toString().equals(r.toString())) {
+    	 win++;
+    	 System.out.println(hold.getIcon());
+    	 System.out.println(win);
+    	 System.out.println("true");
+    	 return true;
+     }else {
+    	 System.out.println("false");
+    	 System.out.println(hold.getIcon());
+    	 System.out.println(r);
+    	 return false;
+     }
+   }
+>>>>>>> master
 	
 	public static void main(String[] args) {
 		 new hamster_stage2();

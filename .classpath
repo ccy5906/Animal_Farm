@@ -2,7 +2,11 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/javastudy/Animal/mail-1.4.7.jar"/>
 	<classpathentry kind="lib" path="D:/javastudy/Animal/jPDFPrint.jar"/>
+=======
+	<classpathentry kind="lib" path="mail-1.4.7.jar"/>
+>>>>>>> master
 	<classpathentry kind="output" path="bin"/>
 </classpath>

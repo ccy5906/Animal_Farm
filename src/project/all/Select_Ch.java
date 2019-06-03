@@ -47,14 +47,14 @@ public class Select_Ch extends JFrame {
 					getContentPane().add(panel);
 					
 					//캐릭터 이미지 버튼
-					JButton select1 = new JButton(rszImg("img/dog/dog_select.png",230,250)); 
-					select1.setBounds(250, 350, 400, 300);
+					JButton select1 = new JButton(rszImg("img/dog/dog_select.png",330,350)); 
+					select1.setBounds(250, 350, 400, 400);
 					select1.setBorderPainted(false); select1.setContentAreaFilled(false);
-					JButton select2 = new JButton(rszImg("img/cat/cat.png",250,250));
-					select2.setBounds(750,350,400,300);
+					JButton select2 = new JButton(rszImg("img/cat/cat.png",350,350));
+					select2.setBounds(750,350,400,400);
 					select2.setBorderPainted(false); select2.setContentAreaFilled(false);
-					JButton select3 = new JButton(rszImg("img/ham/hamster.png",250,200));
-					select3.setBounds(1250,350,400,300);
+					JButton select3 = new JButton(rszImg("img/ham/hamster_2.png",350,350));
+					select3.setBounds(1250,350,400,400);
 					select3.setBorderPainted(false); select3.setContentAreaFilled(false);
 					
 					JLabel name=new JLabel("사용자 이름 : ");

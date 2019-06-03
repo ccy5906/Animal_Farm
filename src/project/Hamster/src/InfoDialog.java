@@ -15,8 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
+<<<<<<< HEAD
 
 import project.all.ShowInfo;
+=======
+>>>>>>> master
 
 public class InfoDialog extends TimerTask{
 	
@@ -25,9 +28,15 @@ public class InfoDialog extends TimerTask{
 	int status=0; //1이면 버튼 클릭함
 	String content = "<html><br><br>게임 방법<br><br>"
 	+ "왼쪽에서부터 이동하는 손바닥을 해당 자세와 똑같이 만들어서 <br><br>햄스터와의 거리 0cm가 되는 게임이다.<br><br>" + 
+<<<<<<< HEAD
 	"①만들어야 할 핸들링 자세를 확인한다.<br><br> ②움직이는 손바닥이 제시하는 자세와 같은 손 모양,먹이에 도착했을 때 <br><br>그림을 클릭한다. <br><br>"
 	+ "     - 맞는 그림의 구간에서 클릭하면 손바닥이 해당 그림에 맞게 <br><br>        변하고 햄스터와의 거리가 가까워진다.<br><br>" 
 	+ "     - 틀리면 그다음으로 이동하는 손바닥으로 다시 시도해야 한다.<br><br><br>" +
+=======
+	"①만들어야 할 핸들링 자세를 확인한다.<br><br> ②움직이는 손바닥이 제시하는 자세와 같은 <br><br>손 모양, 먹이에 도착했을 때 그림을 클릭한다. <br><br>"
+	+ "&nbsp;&nbsp;- 맞는 그림의 구간에서 클릭하면 손바닥이 <br><br>해당 그림에 맞게 변하고 햄스터와의 거리가 가까워진다.<br><br>" 
+	+ "&nbsp;&nbsp;- 틀리면 그다음으로 이동하는 손바닥으로 다시 시도해야 한다.<br><br><br>" +
+>>>>>>> master
 	"※햄스터와 0cm가 될 때나 시간이 다 지났을 때 게임이 끝나며 <br><br>점수는 남은 시간은 100점으로 계산한다.※</html>";
 	
 	public InfoDialog() {}
